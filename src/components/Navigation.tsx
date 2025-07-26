@@ -242,7 +242,7 @@ const Navigation: React.FC = () => {
           aria-labelledby="mobile-menu-button"
         >
           <div className="py-6 space-y-3">
-            {navigationItems.map((item, index) => (
+            {navigationItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => handleLinkClick(item.href)}
@@ -250,16 +250,10 @@ const Navigation: React.FC = () => {
                   isActiveLink(item.href)
                     ? 'text-brand-accent bg-brand-accent-light bg-opacity-10 border-l-4 border-brand-accent scale-105'
                     : 'text-brand-black-900'
-                } ${isMenuOpen ? 'animate-fade-in-left' : ''}`}
+                }`}
                 role="menuitem"
                 aria-current={isActiveLink(item.href) ? 'page' : undefined}
                 tabIndex={isMenuOpen ? 0 : -1}
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                  transform: isMenuOpen ? 'translateX(0)' : 'translateX(-20px)',
-                  opacity: isMenuOpen ? 1 : 0,
-                  transition: `all 0.3s ease-out ${index * 100}ms`,
-                }}
               >
                 {item.label}
               </button>

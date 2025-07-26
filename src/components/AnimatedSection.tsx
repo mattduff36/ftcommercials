@@ -8,6 +8,7 @@ interface AnimatedSectionProps {
   delay?: number;
   threshold?: number;
   className?: string;
+  id?: string;
 }
 
 export default function AnimatedSection({
@@ -16,6 +17,7 @@ export default function AnimatedSection({
   delay = 0,
   threshold = 0.1,
   className = '',
+  id,
 }: AnimatedSectionProps): JSX.Element {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -92,7 +94,7 @@ export default function AnimatedSection({
   };
 
   return (
-    <div ref={sectionRef} className={`${getAnimationClasses()} ${className}`}>
+    <div ref={sectionRef} id={id} className={`${getAnimationClasses()} ${className}`}>
       {children}
     </div>
   );

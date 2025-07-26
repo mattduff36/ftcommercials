@@ -35,7 +35,7 @@ export default function HomePage(): JSX.Element {
       </section>
 
       {/* Services Overview */}
-      <AnimatedSection animation="fade" className="py-16 bg-gray-50">
+      <AnimatedSection id="services" animation="fade" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <ServicesOverview />
         </div>
