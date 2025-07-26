@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 /* Custom scroll behavior for sections with fixed navbar */
-/* Scroll margin handled by JavaScript for better mobile control */
+section[id] {
+  scroll-margin-top: 80px; /* h-20 = 80px navbar height */
+}
 
 /* Custom animations */
 @keyframes fade-in {
