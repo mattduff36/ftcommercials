@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactNode, useRef, useEffect, useState } from 'react';
 
 interface AnimatedSectionProps {
@@ -67,4 +69,4 @@ export default function AnimatedSection({
       {children}
     </div>
   );
-} 
+}

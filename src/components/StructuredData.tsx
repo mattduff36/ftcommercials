@@ -55,4 +55,4 @@ export default function StructuredData(): JSX.Element {
       dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
     />
   );
-} 
+}

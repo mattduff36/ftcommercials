@@ -58,4 +58,4 @@ export function validateContactForm(data: ContactFormData): FormErrors {
 
 export function isFormValid(errors: FormErrors): boolean {
   return Object.keys(errors).length === 0;
-} 
+}

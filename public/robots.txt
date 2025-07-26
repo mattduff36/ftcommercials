@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ftcommercialslimited.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin areas (if any are added in the future)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Allow all other content
+Allow: /about/
+Allow: /services/
+Allow: /fleet/
+Allow: /contact/
+Allow: /accessibility/ 

@@ -14,4 +14,4 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       <Footer />
     </div>
   );
-} 
+}

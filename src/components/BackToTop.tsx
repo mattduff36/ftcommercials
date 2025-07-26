@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 
 export default function BackToTop(): JSX.Element {
@@ -52,4 +54,4 @@ export default function BackToTop(): JSX.Element {
       )}
     </>
   );
-} 
+}

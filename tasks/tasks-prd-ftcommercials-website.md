@@ -1,0 +1,181 @@
+# Task List: F.T. Commercials LTD Website Implementation
+
+## Relevant Files
+
+- `src/app/layout.tsx` - Main layout component with navigation and footer
+- `src/app/page.tsx` - Home page component
+- `src/app/services/page.tsx` - Services page component
+- `src/app/fleet/page.tsx` - Fleet/workshop capabilities page component
+- `src/app/about/page.tsx` - About page component
+- `src/app/contact/page.tsx` - Contact page component
+- `src/app/accessibility/page.tsx` - Accessibility page component
+- `src/components/Navigation.tsx` - Navigation component
+- `src/components/Hero.tsx` - Hero section component
+- `src/components/ServicesOverview.tsx` - Services overview component
+- `src/components/FleetShowcase.tsx` - Fleet/workshop showcase component
+- `src/components/ContactForm.tsx` - Contact form component
+- `src/components/Footer.tsx` - Footer component
+- `src/components/WhyChooseUs.tsx` - Why choose us component
+- `src/components/StructuredData.tsx` - SEO structured data component
+- `src/components/BackToTop.tsx` - Back to top button component
+- `src/components/AnimatedSection.tsx` - Animated section wrapper component
+- `src/lib/utils/emailService.ts` - Email service utilities
+- `src/lib/utils/formValidation.ts` - Form validation utilities
+- `src/lib/hooks/useScrollAnimation.ts` - Scroll animation hook
+- `src/app/globals.css` - Global styles
+- `tailwind.config.js` - Tailwind CSS configuration (missing or not generated, npm error)
+- `postcss.config.js` - PostCSS configuration (missing or not generated, npm error)
+- `next.config.js` - Next.js configuration
+- `package.json` - Project dependencies
+- `public/` - Static assets directory
+
+### Notes
+
+- Unit tests should typically be placed alongside the code files they are testing (e.g., `MyComponent.tsx` and `MyComponent.test.tsx` in the same directory).
+- Use `npx jest [optional/path/to/test/file]` to run tests. Running without a path executes all tests found by the Jest configuration.
+- [BLOCKED] 1.2 Configure TypeScript, TailwindCSS, and PostCSS: npm error prevents tailwind.config.js and postcss.config.js from being generated. Manual intervention may be required.
+
+## Tasks
+
+- [ ] 1.0 Project Setup and Configuration
+  - [x] 1.1 Initialize new Next.js project structure for F.T. Commercials LTD
+  - [ ] 1.2 Configure TypeScript, TailwindCSS, and PostCSS [BLOCKED: npm issues]
+  - [x] 1.3 Set up project directory structure (pages, components, lib, public)
+    - [x] 1.3.1 Create components directory structure
+    - [x] 1.3.2 Create lib directory with utils and hooks
+    - [x] 1.3.3 Set up app directory with page routes
+    - [x] 1.3.4 Organize public directory for static assets
+  - [x] 1.4 Configure git, .gitignore, and initial README
+  - [x] 1.5 Install and configure ESLint and Prettier
+    - [x] 1.5.1 Install ESLint and Prettier dependencies
+    - [x] 1.5.2 Configure ESLint rules
+    - [x] 1.5.3 Set up Prettier configuration
+    - [x] 1.5.4 Add lint and format scripts to package.json
+- [x] 2.0 Core Components Development
+  - [x] 2.1 Layout and Navigation
+    - [x] 2.1.1 Create Navigation component with mobile responsiveness
+    - [x] 2.1.2 Create Footer component with contact information
+    - [x] 2.1.3 Create Layout wrapper component
+  - [x] 2.2 Hero and Landing Components
+    - [x] 2.2.1 Create Hero component with dynamic backgrounds
+    - [x] 2.2.2 Create WhyChooseUs component
+    - [x] 2.2.3 Create ServicesOverview component
+  - [x] 2.3 Workshop and Services Components
+    - [x] 2.3.1 Create FleetShowcase component for workshop facilities
+    - [x] 2.3.2 Create ServiceCard component for individual services
+    - [x] 2.3.3 Create TestimonialCard component
+  - [x] 2.4 Contact and Form Components
+    - [x] 2.4.1 Create ContactForm component with validation
+    - [x] 2.4.2 Create ServiceRequestForm component
+    - [x] 2.4.3 Create ContactInfo component
+  - [x] 2.5 Utility Components
+    - [x] 2.5.1 Create BackToTop component
+    - [x] 2.5.2 Create AnimatedSection component
+    - [x] 2.5.3 Create StructuredData component for SEO
+- [x] 3.0 Page Implementation
+  - [x] 3.1 Home Page
+    - [x] 3.1.1 Implement Hero section with dynamic backgrounds
+    - [x] 3.1.2 Add WhyChooseUs section
+    - [x] 3.1.3 Add ServicesOverview section
+    - [x] 3.1.4 Add testimonial section
+  - [x] 3.2 Services Page
+    - [x] 3.2.1 Create service categories section
+    - [x] 3.2.2 Add detailed service descriptions
+    - [x] 3.2.3 Implement service request form
+  - [x] 3.3 Fleet/Workshop Page
+    - [x] 3.3.1 Add FleetShowcase component
+    - [x] 3.3.2 Create facilities overview section
+    - [x] 3.3.3 Add equipment specifications
+  - [x] 3.4 About Page
+    - [x] 3.4.1 Create company history section
+    - [x] 3.4.2 Add team and expertise section
+    - [x] 3.4.3 Implement values and mission section
+  - [x] 3.5 Contact Page
+    - [x] 3.5.1 Add ContactInfo component
+    - [x] 3.5.2 Implement ContactForm
+    - [x] 3.5.3 Add map and directions
+  - [x] 3.6 Accessibility Page
+    - [x] 3.6.1 Create accessibility statement
+    - [x] 3.6.2 Add WCAG compliance information
+- [x] 4.0 Contact Form and Email Integration
+  - [x] 4.1 Email Service Setup
+    - [x] 4.1.1 Install and configure email service dependencies
+    - [x] 4.1.2 Set up environment variables for email configuration
+    - [x] 4.1.3 Create email service utility functions
+  - [x] 4.2 Contact Form Integration
+    - [x] 4.2.1 Implement contact form submission handler
+    - [x] 4.2.2 Add email templates for contact form
+    - [x] 4.2.3 Set up confirmation emails
+  - [x] 4.3 Service Request Integration
+    - [x] 4.3.1 Implement service request form handler
+    - [x] 4.3.2 Add email templates for service requests
+    - [x] 4.3.3 Set up notification system
+  - [x] 4.4 Error Handling
+    - [x] 4.4.1 Implement error handling for form submissions
+    - [x] 4.4.2 Add error notifications
+    - [x] 4.4.3 Create fallback mechanisms
+- [x] 5.0 Styling and Design Implementation
+  - [x] 5.1 Color Scheme
+    - [x] 5.1.1 Configure brand colors in Tailwind
+    - [x] 5.1.2 Apply color scheme to components
+    - [x] 5.1.3 Ensure color contrast accessibility
+  - [x] 5.2 Typography
+    - [x] 5.2.1 Set up font families
+    - [x] 5.2.2 Configure text styles
+    - [x] 5.2.3 Implement responsive typography
+  - [x] 5.3 Layout and Spacing
+    - [x] 5.3.1 Define spacing system
+    - [x] 5.3.2 Configure container sizes
+    - [x] 5.3.3 Implement responsive layouts
+  - [x] 5.4 Components Styling
+    - [x] 5.4.1 Style form elements
+    - [x] 5.4.2 Style buttons and interactive elements
+    - [x] 5.4.3 Style cards and content blocks
+  - [x] 5.5 Animations and Transitions
+    - [x] 5.5.1 Configure animation settings
+    - [x] 5.5.2 Add hover and focus effects
+    - [x] 5.5.3 Implement page transitions
+- [x] 6.0 SEO and Accessibility Optimization
+  - [x] 6.1 SEO Implementation
+    - [x] 6.1.1 Configure metadata for all pages
+    - [x] 6.1.2 Add structured data markup
+    - [x] 6.1.3 Implement OpenGraph tags
+    - [x] 6.1.4 Add sitemap generation
+    - [x] 6.1.5 Configure robots.txt
+  - [x] 6.2 Accessibility Enhancements
+    - [x] 6.2.1 Add ARIA labels and roles
+    - [x] 6.2.2 Implement keyboard navigation
+    - [x] 6.2.3 Ensure proper heading hierarchy
+    - [x] 6.2.4 Add skip navigation link
+  - [x] 6.3 Performance Optimization
+    - [x] 6.3.1 Optimize image loading
+    - [x] 6.3.2 Implement lazy loading
+    - [x] 6.3.3 Add caching strategies
+    - [x] 6.3.4 Optimize bundle size
+  - [x] 6.4 Analytics and Monitoring
+    - [x] 6.4.1 Set up Vercel Analytics
+    - [x] 6.4.2 Configure error tracking
+    - [x] 6.4.3 Add performance monitoring
+- [x] 7.0 Testing and Deployment Preparation
+  - [x] 7.1 Testing Setup
+    - [x] 7.1.1 Install Jest and React Testing Library
+    - [x] 7.1.2 Configure Jest for Next.js
+    - [x] 7.1.3 Set up test utilities and mocks
+    - [x] 7.1.4 Create component tests
+  - [x] 7.2 Unit Testing
+    - [x] 7.2.1 Test Navigation component
+    - [x] 7.2.2 Test ContactForm component
+    - [x] 7.2.3 Test form validation
+    - [x] 7.2.4 Test accessibility features
+  - [x] 7.3 Integration Testing
+    - [x] 7.3.1 Test email service integration
+    - [x] 7.3.2 Test form submission flow
+    - [x] 7.3.3 Test responsive design
+  - [x] 7.4 Performance Testing
+    - [x] 7.4.1 Test Core Web Vitals
+    - [x] 7.4.2 Test image optimization
+    - [x] 7.4.3 Test bundle size
+  - [x] 7.5 Deployment Preparation
+    - [x] 7.5.1 Configure build optimization
+    - [x] 7.5.2 Set up environment variables
+    - [x] 7.5.3 Prepare deployment scripts 

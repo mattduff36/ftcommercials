@@ -1,27 +1,59 @@
+import React from 'react';
 import Image from 'next/image';
+import { CheckCircle, MapPin, Clock, Users } from 'lucide-react';
 
-interface FacilityFeature {
-  title: string;
-  description: string;
-}
-
-export default function FleetShowcase(): JSX.Element {
-  const facilities: FacilityFeature[] = [
+const FleetShowcase: React.FC = () => {
+  const workshopFeatures = [
     {
       title: '5-Bay Workshop',
-      description: 'Fully equipped workshop capable of handling multiple vehicles simultaneously',
+      description:
+        'Fully equipped modern workshop bays capable of handling all commercial vehicle types',
+      icon: <CheckCircle className="w-6 h-6" />,
     },
     {
-      title: 'Brake Testing',
-      description: 'Newly installed inground brake rollers for comprehensive brake testing',
+      title: 'Inground Brake Rollers',
+      description:
+        'Newly installed brake testing equipment meeting Traffic Commissioner Guidelines',
+      icon: <CheckCircle className="w-6 h-6" />,
     },
     {
-      title: 'Loading Capability',
-      description: 'Option for loading trailers to perform loaded brake tests',
+      title: 'Loading Trailer Available',
+      description: 'Optional loading trailer for comprehensive loaded brake testing services',
+      icon: <CheckCircle className="w-6 h-6" />,
     },
     {
-      title: 'Spacious Site',
-      description: '1-acre site with parking capacity for 20-30 vehicles',
+      title: 'Spacious Parking',
+      description: '1-acre site with parking capacity for 20-30 commercial vehicles',
+      icon: <CheckCircle className="w-6 h-6" />,
+    },
+    {
+      title: 'Modern Equipment',
+      description: 'Latest diagnostic tools and workshop equipment for professional service',
+      icon: <CheckCircle className="w-6 h-6" />,
+    },
+    {
+      title: 'Skilled Team',
+      description:
+        'Experienced technicians with expertise in all aspects of commercial vehicle repair',
+      icon: <CheckCircle className="w-6 h-6" />,
+    },
+  ];
+
+  const stats = [
+    {
+      icon: <MapPin className="w-8 h-8" />,
+      value: '1 Acre',
+      label: 'Workshop Site',
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      value: '20-30',
+      label: 'Vehicle Capacity',
+    },
+    {
+      icon: <Clock className="w-8 h-8" />,
+      value: '7am-5pm',
+      label: 'Opening Hours',
     },
   ];
 
@@ -29,80 +61,74 @@ export default function FleetShowcase(): JSX.Element {
     <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Workshop Facilities</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            State-of-the-art facilities equipped to handle all your commercial vehicle needs
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-brand-black-900 mb-6">
+            Our Workshop Facilities
+          </h2>
+          <p className="text-xl text-brand-grey-600 max-w-3xl mx-auto">
+            State-of-the-art facilities designed for comprehensive commercial vehicle servicing
           </p>
         </div>
 
-        {/* Workshop Images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
-            <Image
-              src="/images/workshop-1.jpg"
-              alt="F.T. Commercials workshop bay"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative h-44 md:h-[182px] rounded-lg overflow-hidden shadow-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Workshop Image */}
+          <div className="relative">
+            <div className="relative h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="/images/workshop-2.jpg"
-                alt="Brake testing equipment"
+                src="/building.jpg"
+                alt="F.T. Commercials Workshop Facility"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
               />
-            </div>
-            <div className="relative h-44 md:h-[182px] rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/images/workshop-3.jpg"
-                alt="Workshop equipment"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-44 md:h-[182px] rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/images/workshop-4.jpg"
-                alt="Vehicle maintenance"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="relative h-44 md:h-[182px] rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/images/workshop-5.jpg"
-                alt="Workshop overview"
-                fill
-                className="object-cover"
-              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+
+              {/* Overlay Badge */}
+              <div className="absolute bottom-6 left-6 bg-brand-accent text-white px-4 py-2 rounded-lg font-semibold">
+                5-Bay Fully Equipped Workshop
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Facility Features */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {facilities.map(facility => (
-            <div
-              key={facility.title}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
-            >
-              <h3 className="text-xl font-semibold mb-2">{facility.title}</h3>
-              <p className="text-gray-600">{facility.description}</p>
+          {/* Workshop Features */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold text-brand-black-900 mb-6">
+                Professional Workshop Features
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {workshopFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start space-x-3 p-4 rounded-lg hover:bg-brand-light transition-colors duration-300"
+                  >
+                    <div className="text-brand-accent flex-shrink-0 mt-1">{feature.icon}</div>
+                    <div>
+                      <h4 className="font-semibold text-brand-black-900 mb-1">{feature.title}</h4>
+                      <p className="text-sm text-brand-grey-600">{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
 
-        {/* Additional Information */}
-        <div className="mt-12 text-center">
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our modern workshop is equipped with the latest diagnostic and repair equipment, ensuring we
-            can handle everything from routine maintenance to complex repairs for all types of
-            commercial vehicles.
-          </p>
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-6 border-t border-brand-grey-200">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="flex items-center justify-center w-12 h-12 bg-brand-accent-light bg-opacity-10 rounded-full mx-auto mb-3">
+                    <div className="text-brand-accent">{stat.icon}</div>
+                  </div>
+                  <div className="text-2xl font-bold text-brand-black-900 mb-1">{stat.value}</div>
+                  <div className="text-sm text-brand-grey-600">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
-} 
+};
+
+export default FleetShowcase;

@@ -21,19 +21,19 @@ export default function ServiceCard({
       <div className="p-6">
         {/* Icon and Title */}
         <div className="flex items-center mb-4">
-          <div className="text-orange-600 text-3xl mr-4">{icon}</div>
-          <h3 className="text-xl font-semibold">{title}</h3>
+          <div className="text-brand-accent text-3xl mr-4">{icon}</div>
+          <h3 className="text-xl font-semibold text-brand-black-900">{title}</h3>
         </div>
 
         {/* Description */}
-        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-brand-grey-600 mb-4">{description}</p>
 
         {/* Features List */}
         <ul className="space-y-2 mb-6">
           {features.map((feature, index) => (
-            <li key={index} className="flex items-center text-gray-600">
+            <li key={index} className="flex items-center text-brand-grey-600">
               <svg
-                className="h-5 w-5 text-orange-500 mr-2"
+                className="h-5 w-5 text-brand-accent mr-2"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -51,7 +51,7 @@ export default function ServiceCard({
         {/* Call to Action */}
         <Link
           href={href}
-          className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
+          className="inline-flex items-center text-brand-accent hover:text-brand-accent-dark font-medium transition-colors duration-300"
         >
           Learn More
           <svg
@@ -69,4 +69,4 @@ export default function ServiceCard({
       </div>
     </div>
   );
-} 
+}
