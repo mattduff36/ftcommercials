@@ -37,12 +37,12 @@ const Navigation: React.FC = () => {
     if (element) {
       // Check if we're on mobile
       const isMobile = window.innerWidth <= 768;
-      
-             if (isMobile) {
-         // Use manual calculation for mobile since CSS scroll-margin-top doesn't work reliably
-         const navbarHeight = 0; // No offset for mobile
-         const elementPosition = element.offsetTop - navbarHeight;
-        
+
+      if (isMobile) {
+        // Use manual calculation for mobile since CSS scroll-margin-top doesn't work reliably
+        const navbarHeight = 0; // No offset for mobile
+        const elementPosition = element.offsetTop - navbarHeight;
+
         window.scrollTo({
           top: elementPosition,
           behavior: 'smooth',
