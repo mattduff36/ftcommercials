@@ -35,11 +35,25 @@ const Navigation: React.FC = () => {
     const sectionId = href.replace('#', '');
     const element = document.getElementById(sectionId);
     if (element) {
-      // Use scrollIntoView with CSS scroll-margin-top for proper positioning
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+      // Check if we're on mobile
+      const isMobile = window.innerWidth <= 768;
+      
+             if (isMobile) {
+         // Use manual calculation for mobile since CSS scroll-margin-top doesn't work reliably
+         const navbarHeight = 0; // No offset for mobile
+         const elementPosition = element.offsetTop - navbarHeight;
+        
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth',
+        });
+      } else {
+        // Use scrollIntoView with CSS scroll-margin-top for desktop
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      }
     }
   };
 
