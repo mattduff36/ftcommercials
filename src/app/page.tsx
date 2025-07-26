@@ -71,10 +71,7 @@ export default function HomePage(): JSX.Element {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div
-              id="facilities"
-              className="bg-white rounded-lg shadow-md p-8 transition-all duration-300 hover:shadow-lg"
-            >
+            <div className="bg-white rounded-lg shadow-md p-8 transition-all duration-300 hover:shadow-lg">
               <h3 className="text-2xl font-semibold text-brand-black-900 mb-4">Our Workshop</h3>
               <p className="text-brand-grey-600 leading-relaxed mb-4">
                 Our 1-acre site provides ample parking for 20-30 vehicles, with a 5-bay fully

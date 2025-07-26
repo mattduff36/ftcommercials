@@ -35,10 +35,9 @@ const Navigation: React.FC = () => {
     const sectionId = href.replace('#', '');
     const element = document.getElementById(sectionId);
     if (element) {
-      // Check if we're on mobile
-      const isMobile = window.innerWidth <= 768;
-      const navbarHeight = isMobile ? 60 : 80; // Different heights for mobile vs desktop
+      const navbarHeight = 80; // Navigation bar height (h-20 = 80px)
 
+      // Calculate position so navbar bottom aligns with top of section padding (above title)
       const elementPosition = element.offsetTop - navbarHeight;
 
       window.scrollTo({
