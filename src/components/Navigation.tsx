@@ -242,7 +242,7 @@ const Navigation: React.FC = () => {
           aria-labelledby="mobile-menu-button"
         >
           <div className="py-6 space-y-3">
-            {navigationItems.map((item) => (
+            {navigationItems.map(item => (
               <button
                 key={item.href}
                 onClick={() => handleLinkClick(item.href)}
