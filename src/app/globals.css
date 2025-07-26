@@ -4,7 +4,14 @@
 
 /* Custom scroll behavior for sections with fixed navbar */
 section[id] {
-  scroll-margin-top: 80px; /* h-20 = 80px */
+  scroll-margin-top: 80px; /* h-20 = 80px for desktop */
+}
+
+/* Mobile-specific scroll margin */
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 60px; /* Reduced margin for mobile */
+  }
 }
 
 /* Custom animations */
