@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative h-[68vh] md:h-[72vh] lg:h-[80vh] w-full overflow-hidden">
+    <section id="home" className="relative h-screen md:h-[72vh] lg:h-[80vh] w-full overflow-hidden">
       {/* Background Image Carousel */}
       <div className="absolute inset-0">
         {heroImages.map((image, index) => (
