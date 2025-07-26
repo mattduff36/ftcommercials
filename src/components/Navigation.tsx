@@ -12,6 +12,7 @@ const Navigation: React.FC = () => {
   const navigationItems = [
     { label: 'Home', href: '#home' },
     { label: 'Services', href: '#services' },
+    { label: 'Facilities', href: '#facilities' },
     { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -44,7 +45,7 @@ const Navigation: React.FC = () => {
   // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'services', 'about', 'contact'];
+      const sections = ['home', 'services', 'facilities', 'about', 'contact'];
       const navbarHeight = 80; // h-20 = 80px
       const scrollPosition = window.scrollY + navbarHeight + 50; // Add offset for better detection
 
