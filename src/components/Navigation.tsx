@@ -35,9 +35,12 @@ const Navigation: React.FC = () => {
     const sectionId = href.replace('#', '');
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({
+      const navbarHeight = 80; // h-20 = 80px
+      const elementPosition = element.offsetTop - navbarHeight;
+
+      window.scrollTo({
+        top: elementPosition,
         behavior: 'smooth',
-        block: 'start',
       });
     }
   };
