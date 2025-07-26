@@ -42,7 +42,7 @@ export default function HomePage(): JSX.Element {
       </AnimatedSection>
 
       {/* Fleet Showcase */}
-      <AnimatedSection animation="slide-up" className="py-16 bg-white">
+      <AnimatedSection id="facilities" animation="slide-up" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <FleetShowcase />
         </div>
