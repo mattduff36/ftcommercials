@@ -35,9 +35,15 @@ const Navigation: React.FC = () => {
     const sectionId = href.replace('#', '');
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({
+      // Check if we're on mobile
+      const isMobile = window.innerWidth <= 768;
+      const navbarHeight = isMobile ? 60 : 80; // Different heights for mobile vs desktop
+
+      const elementPosition = element.offsetTop - navbarHeight;
+
+      window.scrollTo({
+        top: elementPosition,
         behavior: 'smooth',
-        block: 'start',
       });
     }
   };
