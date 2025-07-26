@@ -29,16 +29,19 @@ A modern, professional website for F.T. Commercials LTD, showcasing their HGV an
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone [repository-url]
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Run the development server:
+
    ```bash
    npm run dev
    ```
@@ -68,6 +71,7 @@ ftcommercials-app/
 ## Contact
 
 For any inquiries, please contact:
+
 - Phone: 01777 871493 / 07967 176567
 - Email: ftcommercials@gmail.com
 - Address: Ollerton Road, Newark, United Kingdom

@@ -150,7 +150,8 @@ const Footer: React.FC = () => {
               Need Professional Transport Services?
             </h3>
             <p className="text-brand-grey-300 mb-4">
-              L.W. Barker Transport Services LTD - Complete transport solutions from 3.5-ton vans to 44-ton articulated lorries
+              L.W. Barker Transport Services LTD - Complete transport solutions from 3.5-ton vans to
+              44-ton articulated lorries
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

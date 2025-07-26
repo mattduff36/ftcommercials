@@ -5,7 +5,7 @@ const nextConfig = {
 
   // Exclude temp directories from compilation
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
-  
+
   // Image optimization settings
   images: {
     formats: ['image/webp', 'image/avif'],
@@ -27,16 +27,11 @@ const nextConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
     };
-    
+
     // Ignore temp-template directory
     config.watchOptions = {
       ...config.watchOptions,
-      ignored: [
-        '**/node_modules/**',
-        '**/temp-template/**',
-        '**/temp-files/**',
-        '**/.git/**',
-      ],
+      ignored: ['**/node_modules/**', '**/temp-template/**', '**/temp-files/**', '**/.git/**'],
     };
 
     // Handle favicon properly
@@ -51,4 +46,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;

@@ -37,6 +37,7 @@ CONTACT_EMAIL=ftcommercials@gmail.com
 ## API Endpoint:
 
 The contact form submits to `/api/contact` which:
+
 - Validates the form data
 - Sends the email via Google SMTP
 - Returns appropriate success/error responses
@@ -47,4 +48,4 @@ The contact form submits to `/api/contact` which:
 1. Fill out the contact form on the website
 2. Submit the form
 3. Check the recipient email (ftcommercials@gmail.com) for the new message
-4. The email will include all form data in a professional format 
+4. The email will include all form data in a professional format

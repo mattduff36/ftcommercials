@@ -27,7 +27,20 @@ jest.mock('next/router', () => ({
 // Mock Next.js Image component
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: ({ src, alt, fill, sizes, priority, quality, loading, placeholder, blurDataURL, onLoad, className, ...props }) => {
+  default: ({
+    src,
+    alt,
+    fill,
+    sizes,
+    priority,
+    quality,
+    loading,
+    placeholder,
+    blurDataURL,
+    onLoad,
+    className,
+    ...props
+  }) => {
     // eslint-disable-next-line @next/next/no-img-element
     return <img src={src} alt={alt} className={className} {...props} />;
   },
@@ -49,4 +62,4 @@ global.IntersectionObserver = jest.fn().mockImplementation(() => ({
   observe: jest.fn(),
   unobserve: jest.fn(),
   disconnect: jest.fn(),
-})); 
+}));

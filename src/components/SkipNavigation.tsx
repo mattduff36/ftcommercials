@@ -23,4 +23,4 @@ const SkipNavigation: React.FC = () => {
   );
 };
 
-export default SkipNavigation; 
+export default SkipNavigation;

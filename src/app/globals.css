@@ -195,7 +195,7 @@ html {
   .no-print {
     display: none !important;
   }
-  
+
   .print-break {
     page-break-before: always;
   }

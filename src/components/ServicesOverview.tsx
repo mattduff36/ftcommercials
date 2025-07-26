@@ -101,8 +101,8 @@ const ServicesOverview: React.FC = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link 
-            href="#services" 
+          <Link
+            href="#services"
             className="bg-brand-accent hover:bg-brand-accent-dark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg inline-flex items-center"
           >
             View All Services

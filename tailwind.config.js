@@ -9,13 +9,13 @@ module.exports = {
     extend: {
       colors: {
         // F.T. Commercials brand colors
-        'brand': {
-          light: '#F5F5F5',    // Light grey
-          DEFAULT: '#E0E0E0',  // Default grey
-          dark: '#757575',     // Dark grey
-          'accent-light': '#F2A75C',  // New orange color
-          accent: '#F2A75C',   // New orange color
-          'accent-dark': '#E6955A',   // Slightly darker version of new orange
+        brand: {
+          light: '#F5F5F5', // Light grey
+          DEFAULT: '#E0E0E0', // Default grey
+          dark: '#757575', // Dark grey
+          'accent-light': '#F2A75C', // New orange color
+          accent: '#F2A75C', // New orange color
+          'accent-dark': '#E6955A', // Slightly darker version of new orange
         },
         'brand-black': {
           50: '#f8fafc',
@@ -28,7 +28,7 @@ module.exports = {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
-          950: '#020617',  // Primary black
+          950: '#020617', // Primary black
         },
         'brand-grey': {
           50: '#f9fafb',
@@ -36,7 +36,7 @@ module.exports = {
           200: '#e5e7eb',
           300: '#d1d5db',
           400: '#9ca3af',
-          500: '#6b7280',  // Primary grey
+          500: '#6b7280', // Primary grey
           600: '#4b5563',
           700: '#374151',
           800: '#1f2937',
@@ -48,27 +48,27 @@ module.exports = {
         'soft-lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
       },
       spacing: {
-        '72': '18rem',
-        '84': '21rem',
-        '96': '24rem',
+        72: '18rem',
+        84: '21rem',
+        96: '24rem',
       },
       maxWidth: {
         '7xl': '80rem',
         '8xl': '88rem',
       },
       minHeight: {
-        '40': '10rem',
+        40: '10rem',
       },
       gap: {
-        '11': '2.75rem',
-        '13': '3.25rem',
+        11: '2.75rem',
+        13: '3.25rem',
       },
       borderRadius: {
-        'xl': '1rem',
+        xl: '1rem',
         '2xl': '2rem',
       },
       animation: {
-        'float': 'float 6s ease-in-out infinite',
+        float: 'float 6s ease-in-out infinite',
         'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
         'bounce-entrance': 'bounce-entrance 1s ease-out',
         'scale-in': 'scale-in 0.3s ease-out',
@@ -97,7 +97,7 @@ module.exports = {
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
       },
-      typography: (theme) => ({
+      typography: theme => ({
         DEFAULT: {
           css: {
             color: theme('colors.brand-grey.700'),
@@ -116,8 +116,5 @@ module.exports = {
       display: ['Roboto', 'system-ui', 'sans-serif'],
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-  ],
-}; 
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
+};
