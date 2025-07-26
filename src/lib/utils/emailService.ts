@@ -17,19 +17,22 @@ interface ContactFormData {
   vehicleDetails?: string;
 }
 
-// Initialize Resend client
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend client only if API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
-// Create SMTP transporter as a fallback
-const smtpTransporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT),
-  secure: true,
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+// Create SMTP transporter as a fallback (only if SMTP credentials are available)
+const smtpTransporter =
+  process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS
+    ? nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT) || 587,
+        secure: true,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASS,
+        },
+      })
+    : null;
 
 // Helper function to create HTML email content
 function createEmailHtml(data: ContactFormData, isServiceRequest = false): string {
@@ -75,25 +78,29 @@ ${data.message}
 export async function sendEmail(emailData: EmailData): Promise<boolean> {
   try {
     // Try sending with Resend first
-    await resend.emails.send({
-      from: 'F.T. Commercials <noreply@ftcommercialslimited.com>',
-      ...emailData,
-    });
-    return true;
-  } catch (error) {
-    console.error('Resend email error:', error);
-
-    try {
-      // Fallback to SMTP if Resend fails
-      await smtpTransporter.sendMail({
-        from: process.env.NOTIFICATION_EMAIL,
+    if (resend) {
+      await resend.emails.send({
+        from: 'F.T. Commercials <noreply@ftcommercialslimited.com>',
         ...emailData,
       });
       return true;
-    } catch (smtpError) {
-      console.error('SMTP email error:', smtpError);
-      return false;
+    } else {
+      console.warn('Resend client not initialized, falling back to SMTP.');
+      // Fallback to SMTP if Resend fails
+      if (smtpTransporter) {
+        await smtpTransporter.sendMail({
+          from: process.env.NOTIFICATION_EMAIL,
+          ...emailData,
+        });
+        return true;
+      } else {
+        console.error('SMTP transporter not initialized, cannot send email.');
+        return false;
+      }
     }
+  } catch (error) {
+    console.error('Email sending error:', error);
+    return false;
   }
 }
 
