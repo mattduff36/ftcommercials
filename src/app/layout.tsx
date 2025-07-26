@@ -30,7 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${roboto.variable}`}>
       <body className="font-sans antialiased">
-        <Layout>{children}</Layout>
+        <Layout>
+          <div className="animate-fade">{children}</div>
+        </Layout>
       </body>
     </html>
   );
