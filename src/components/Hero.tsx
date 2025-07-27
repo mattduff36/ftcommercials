@@ -135,7 +135,25 @@ const Hero: React.FC = () => {
                 onClick={() => {
                   const element = document.getElementById('contact');
                   if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Check if we're on mobile
+                    const isMobile = window.innerWidth <= 768;
+
+                    if (isMobile) {
+                      // Use manual calculation for mobile since CSS scroll-margin-top doesn't work reliably
+                      const navbarHeight = 0; // No offset for mobile
+                      const elementPosition = element.offsetTop - navbarHeight;
+
+                      window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth',
+                      });
+                    } else {
+                      // Use scrollIntoView with CSS scroll-margin-top for desktop
+                      element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start',
+                      });
+                    }
                   }
                 }}
                 className="group relative overflow-hidden flex items-center justify-center bg-brand-accent hover:bg-brand-accent-dark text-white px-4 md:px-8 py-2 md:py-4 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
