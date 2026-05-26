@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative h-[calc(100vh-160px)] md:h-[72vh] lg:h-[80vh] w-full overflow-hidden"
+      className="relative h-[calc(100dvh-var(--nav-height))] w-full overflow-hidden"
     >
       {/* Background Image Carousel */}
       <div className="absolute inset-0">

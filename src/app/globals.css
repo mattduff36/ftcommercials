@@ -75,6 +75,7 @@ section[id] {
 
 /* Brand colors */
 :root {
+  --nav-height: 5rem; /* matches Navigation h-20 (80px) */
   --brand-accent: #2563eb;
   --brand-accent-light: #dbeafe;
   --brand-accent-dark: #1d4ed8;
